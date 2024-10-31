@@ -2,14 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome | Your Name's Stories</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Welcome | Mete Namazov's Stories</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Global Styles -->
+    <style>
+        /* Scoped Styles for Language Selection Page */
+        body.language-selection-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full viewport height */
+            background-image: url('images/hero-background.jpg'); /* Add your background image path */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        body.language-selection-page::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(18, 18, 18, 0.6); /* Semi-Transparent Dark Overlay */
+            z-index: 0;
+        }
+
+        .language-selection-container {
+            position: relative;
+            z-index: 1; /* Ensure content is above the overlay */
+            text-align: center;
+            background-color: rgba(31, 31, 31, 0.8); /* Slightly transparent background */
+            padding: 40px 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .language-selection-container h1 {
+            font-size: 48px;
+            color: #ff6f61; /* Vibrant Coral */
+            margin-bottom: 40px;
+        }
+
+        .language-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Space between language options */
+        }
+
+        .language-option {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: rgba(255, 111, 97, 0.1); /* Light Coral background */
+            border: 2px solid #ff6f61; /* Vibrant Coral border */
+            border-radius: 5px;
+            padding: 15px 20px;
+            color: #ff6f61; /* Vibrant Coral Text */
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+            min-height: 60px; /* Uniform height */
+        }
+
+        .language-option:hover {
+            background-color: rgba(255, 111, 97, 0.2); /* Darker Coral on Hover */
+            color: #ff856f; /* Lighter Coral Text on Hover */
+        }
+
+        .language-option img.flag-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+        }
+
+        .language-option span.number {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #ff856f; /* Lighter Coral for numbering */
+            min-width: 30px; /* Align numbering */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .language-selection-container h1 {
+                font-size: 36px;
+                margin-bottom: 30px;
+            }
+
+            .language-option {
+                padding: 12px 15px;
+                min-height: 50px;
+            }
+
+            .language-option img.flag-icon {
+                width: 25px;
+                height: 25px;
+                margin-right: 10px;
+            }
+
+            .language-option span.number {
+                font-size: 20px;
+                margin-right: 10px;
+                min-width: 25px;
+            }
+        }
+    </style>
 </head>
-<body>
-    <div class="language-selection">
-        <h1>Welcome to My Stories</h1>
-        <p>Please select your language:</p>
-        <a href="en/index.html">English</a> | <a href="az/index.html">Azərbaycan</a>
+<body class="language-selection-page">
+    <div class="language-selection-container">
+        <h1>Mete Namazov</h1>
+        <div class="language-selector">
+            <a href="az/index.html" class="language-option">
+                <img src="flags/az.png" alt="Azərbaycan Flag" class="flag-icon">
+                <span>Azərbaycan</span>
+            </a>
+            <a href="en/index.html" class="language-option">
+                <img src="flags/en.png" alt="English Flag" class="flag-icon">
+                <span>English</span>
+            </a>
+
+        </div>
     </div>
 </body>
 </html>
